@@ -53,36 +53,74 @@ public class LoginController {
         }
         return null;
     }
+    
+    
 
     @FXML
     void loginUser(ActionEvent event) throws SQLException, IOException {
         final String userID = user_id.getText().toString();
         final String userPassword = user_password.getText().toString();
         
-        Connection conn = dbConnect();
-        Statement st = conn.createStatement();
-        String query = "SELECT * FROM users WHERE user_id = '"+userID+"' AND password = '"+userPassword+"' ";
-        ResultSet rs = st.executeQuery(query);
-        if(rs.next()){
-            Alert al = new Alert(Alert.AlertType.CONFIRMATION);
-            al.setContentText("Successful Login");
-            al.show();
-        Parent part = FXMLLoader.load(getClass().getResource("/lims/students/Student.fxml"));
-        Stage stage = new Stage();
-        Scene scene = new Scene(part);
-        stage.setScene(scene);
-        stage.show();
-        
+        if(isStudent(userID, userPassword) || isAdmin(userID, userPassword)){
+            //LOAD STUDENT
+            if(isStudent(userID, userPassword)){
+                Parent part = FXMLLoader.load(getClass().getResource("/lims/students/Student.fxml"));
+                Stage stage = new Stage();
+                Scene scene = new Scene(part);
+                stage.setScene(scene);
+                stage.show();
+            }
+            //LOAD ADMIN
+            if(isAdmin(userID, userPassword)){
+                Parent part = FXMLLoader.load(getClass().getResource("/lims/admin/Admin.fxml"));
+                Stage stage = new Stage();
+                Scene scene = new Scene(part);
+                stage.setScene(scene);
+                stage.show();
+            }
         }
+        
+        
         else{
             Alert al = new Alert(Alert.AlertType.WARNING);
             al.setContentText("Incorrect Username or Password!");
             al.show();
         }
-        conn.close();
+        
                 
     }
-    boolean isUserExist(String username){
+    boolean isStudent(String stdID, String password) throws SQLException, IOException{
+        Connection conn = dbConnect();
+        Statement st = conn.createStatement();
+        String query = "SELECT * FROM users WHERE user_id = '"+stdID+"' AND role_id = '"+1+"' AND password = '"+password+"' ";
+        
+        ResultSet rs = st.executeQuery(query);
+        
+        if(rs.next()){
+//            Alert al = new Alert(Alert.AlertType.CONFIRMATION);
+//            al.setContentText("Successful Login");
+//            al.show();
+        conn.close();
+        return true;
+        }
+        return false;
+    }
+    
+    
+    boolean isAdmin(String stdID1, String password2) throws SQLException, IOException{
+        Connection conn = dbConnect();
+        Statement st = conn.createStatement();
+        String query = "SELECT * FROM users WHERE user_id = '"+stdID1+"' AND role_id = '"+2+"' AND password = '"+password2+"' ";
+        
+        ResultSet rs = st.executeQuery(query);
+        
+        if(rs.next()){
+//            Alert al = new Alert(Alert.AlertType.CONFIRMATION);
+//            al.setContentText("Successful Login");
+//            al.show();
+        
+        return true;
+        }
         return false;
     }
 

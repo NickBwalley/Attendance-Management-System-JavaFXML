@@ -36,12 +36,13 @@ public class MainController {
 
 
     @FXML
-    void getLoginPage(ActionEvent event) throws IOException {
+    void getLoginPage(ActionEvent event) throws Exception {
         Parent part = FXMLLoader.load(getClass().getResource("/lims/login/login.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(part);
         stage.setScene(scene);
         stage.show();
+
     }
     //DATABASE CONNECTION
     public static Connection dbConnect(){
