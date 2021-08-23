@@ -1,2 +1,2 @@
 Library Management System JavaFXML
-![Alt text](/scrnsht/registration.jpg?raw=true "Optional Title")
+![Aw Snap! Pic not Found!](/scrnshts/registration.jpg?raw=true "Optional Title")
