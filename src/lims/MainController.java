@@ -46,7 +46,7 @@ public class MainController {
     //DATABASE CONNECTION
     public static Connection dbConnect(){
         
-        String url = "jdbc:mysql://localhost:3306/atms_javafx";
+        String url = "jdbc:mysql://localhost:3306/library_javafx";
         String username = "root";
         String password = "";
         
@@ -69,18 +69,22 @@ public class MainController {
     }
     
     @FXML
-    public void registerStudent(ActionEvent event) {
-//        System.out.println("This is just a dummy text!");
-          Alert a = new Alert(Alert.AlertType.WARNING);
-          a.setContentText("Invalid User Name or Password");
+    public void registerStudent(ActionEvent event) throws SQLException {
+        final String username = studentName.getText().toString();
+        final String user_id = studentID.getText().toString();
+        final String email = studentEmail.getText().toString();
+        final String password1 = password.getText().toString();
+        
+        Connection conn = dbConnect();
+        Statement st = conn.createStatement();
+        String query = "INSERT INTO users(username, user_id, email, role_id, password) VALUES('"+username+"', '"
+                +user_id+"', '"+email+"', '"+1+"', '"+password1+"')";
+        st.executeUpdate(query);
+        conn.close();
+        
+          Alert a = new Alert(Alert.AlertType.INFORMATION);
+          a.setContentText(username + " successfully registered!");
           a.show();
-//        Connection conn = dbConnect();
-//        Statement st = conn.createStatement();
-//        String query = "INSERT INTO users(username, user_id, email, role_id, password) VALUES('"+studentName+"', '"
-//                +studentID+"', '"+studentEmail+"', '"+1+"', '"+password+"')";
-//        st.executeUpdate(query);
-//        // System.out.println(name + " successfully registered!");
-//        conn.close();
                 
     }
     
