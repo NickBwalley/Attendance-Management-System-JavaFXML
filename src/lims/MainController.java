@@ -37,7 +37,7 @@ public class MainController {
 
     @FXML
     void getLoginPage(ActionEvent event) throws IOException {
-        Parent part = FXMLLoader.load(getClass().getResource("/atms/login/login.fxml"));
+        Parent part = FXMLLoader.load(getClass().getResource("/lims/login/login.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(part);
         stage.setScene(scene);
