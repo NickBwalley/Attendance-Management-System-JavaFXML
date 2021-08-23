@@ -1,4 +1,4 @@
-package atms;
+package lims;
 
 import java.io.IOException;
 import java.sql.Connection;

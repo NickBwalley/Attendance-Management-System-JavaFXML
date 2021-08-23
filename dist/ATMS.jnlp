@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="ATMS.jar" size="5439" download="eager" />
+    <jar href="ATMS.jar" size="5464" download="eager" />
     <jar href="lib\fontawesomefx-commons-8.15.jar" size="20957" download="eager" />
     <jar href="lib\fontawesomefx-fontawesome-4.7.0-5.jar" size="136891" download="eager" />
     <jar href="lib\fontbox-2.0.4.jar" size="1477887" download="eager" />
@@ -18,6 +18,6 @@
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="ATMS" >
     <param name="requiredFXVersion" value="8.0+"/>
   </applet-desc>
-  <jfx:javafx-desc  width="800" height="600" main-class="atms.Main"  name="ATMS" />
+  <jfx:javafx-desc  width="800" height="600" main-class="lims.Main"  name="ATMS" />
   <update check="always"/>
 </jnlp>
