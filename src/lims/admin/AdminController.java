@@ -28,7 +28,7 @@ public class AdminController {
 
     @FXML
     void viewStudents(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/lims/admin/ViewUsers.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/lims/admin/ViewStudents.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(root);
         stage.setScene(scene);
