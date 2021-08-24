@@ -54,7 +54,7 @@ public class AddBookController {
         
         Connection conn = dbConnect();
         Statement st = conn.createStatement();
-        String query = "INSERT INTO books(book_name, book_author) VALUES('"+bookName+"', '" +bookAuthor+"')";
+        String query = "INSERT INTO books(book_name, book_author) VALUES('"+bookName+"', '"+bookAuthor+"')";
         st.executeUpdate(query);
         conn.close();
         

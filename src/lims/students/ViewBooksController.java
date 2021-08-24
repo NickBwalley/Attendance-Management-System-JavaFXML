@@ -19,7 +19,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import lims.Book;
 
-public class ViewBooksController implements Initializable {
+public class ViewBooksController /*implements Initializable*/ {
     @FXML
     private TableView<Book> table;
     @FXML
@@ -56,43 +56,43 @@ public class ViewBooksController implements Initializable {
         return null;
     }
     public void fetchData() throws SQLException{
-       try{
-        Connection conn = ConnectDB();
-        Statement st = conn.createStatement();  
-        String query = "SELECT * FROM books";
-        
-        ResultSet rs = st.executeQuery(query);
-        Book book = new Book();
-        // System.out.println(rs.toString());
-        if(rs.next()){
-            book.book_id = rs.getString(1);
-            book.book_name = rs.getString(2);
-            book.book_author = rs.getString(3);
-            // book.book_status = rs.getString(4);
-            System.out.println(rs.getString(1) + rs.getString(2) + rs.getString(3));
-            obList.add(book);
-            conn.close();
-        }
-        
-       } catch(SQLException e){
-            e.printStackTrace();
-       }
+//       try{
+//        Connection conn = ConnectDB();
+//        Statement st = conn.createStatement();  
+//        String query = "SELECT * FROM books";
+//        
+//        ResultSet rs = st.executeQuery(query);
+//        Book book = new Book();
+//        // System.out.println(rs.toString());
+//        if(rs.next()){
+//            book.book_id = rs.getString(1);
+//            book.book_name = rs.getString(2);
+//            book.book_author = rs.getString(3);
+//            // book.book_status = rs.getString(4);
+//            System.out.println(rs.getString(1) + rs.getString(2) + rs.getString(3));
+//            obList.add(book);
+//            conn.close();
+//        }
+//        
+//       } catch(SQLException e){
+//            e.printStackTrace();
+//       }
     }
     
-    @Override
-    public void initialize(URL url, ResourceBundle rb){
-        try {
-            fetchData();
-        } catch (SQLException ex) {
-            Logger.getLogger(ViewBooksController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        book_id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        book_name.setCellValueFactory(new PropertyValueFactory<>("book_name"));
-        book_author.setCellValueFactory(new PropertyValueFactory<>("book_author"));
-        table.setItems(obList);
-        
-
-    }
+//    @Override
+//    public void initialize(URL url, ResourceBundle rb){
+//        try {
+//            fetchData();
+//        } catch (SQLException ex) {
+//            Logger.getLogger(ViewBooksController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        book_id.setCellValueFactory(new PropertyValueFactory<>("id"));
+//        book_name.setCellValueFactory(new PropertyValueFactory<>("book_name"));
+//        book_author.setCellValueFactory(new PropertyValueFactory<>("book_author"));
+//        table.setItems(obList);
+//        
+//
+//    }
     
 
 }
