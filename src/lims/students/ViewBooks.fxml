@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lims.students.ViewBooksController">
+   <top>
+      <AnchorPane prefHeight="109.0" prefWidth="700.0" style="-fx-background-color: #0598FF;" BorderPane.alignment="CENTER">
+         <children>
+            <FontAwesomeIconView glyphName="USERS" layoutX="40.0" layoutY="72.0" size="50" />
+            <Text layoutX="168.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STUDENT(VIEW BOOKS)">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+            <TableColumn fx:id="book_name" prefWidth="122.0" text="book_id" />
+            <TableColumn fx:id="book_author" prefWidth="299.0" text="book_name" />
+            <TableColumn fx:id="book_status" prefWidth="278.0" text="book_author" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>

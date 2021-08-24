@@ -1,9 +1,9 @@
-package lims.addbook;
+package lims.admin;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 
-public class AddBookController {
+public class ViewStudentsController {
 
     @FXML
     private TableColumn<?, ?> user_id;
