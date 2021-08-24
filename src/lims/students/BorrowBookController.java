@@ -48,11 +48,11 @@ public class BorrowBookController {
         al.show();
         
         
-        }
+        }else{
         Alert al = new Alert(Alert.AlertType.WARNING);
         al.setContentText("This book is not available!");
         al.show();
-        
+        }
     }
     
     public static Connection ConnectDB(){
