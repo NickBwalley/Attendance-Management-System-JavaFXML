@@ -37,7 +37,7 @@ public class AdminController {
 
     @FXML
     void viewBookStatus(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/lims/students/ViewBorrowed.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/lims/admin/ViewBorrowed.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(root);
         stage.setScene(scene);
