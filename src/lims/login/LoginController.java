@@ -17,6 +17,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import lims.Information;
 
 public class LoginController {
 
@@ -65,6 +66,7 @@ public class LoginController {
             //LOAD STUDENT
             if(isStudent(userID, userPassword)){
                 Parent part = FXMLLoader.load(getClass().getResource("/lims/students/Student.fxml"));
+                Information.user = userID;
                 Stage stage = new Stage();
                 Scene scene = new Scene(part);
                 stage.setScene(scene);
@@ -73,6 +75,7 @@ public class LoginController {
             //LOAD ADMIN
             if(isAdmin(userID, userPassword)){
                 Parent part = FXMLLoader.load(getClass().getResource("/lims/admin/Admin.fxml"));
+                Information.user = userID;
                 Stage stage = new Stage();
                 Scene scene = new Scene(part);
                 stage.setScene(scene);
