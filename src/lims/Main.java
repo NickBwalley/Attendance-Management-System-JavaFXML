@@ -19,7 +19,7 @@ public class Main extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/lims/login/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/lims/addbook/AddBook.fxml"));
         
         Scene scene = new Scene(root);
         

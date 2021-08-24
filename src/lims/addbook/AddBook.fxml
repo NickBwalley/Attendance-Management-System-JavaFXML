@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lims.addbook.AddBookController">
+   <top>
+      <AnchorPane prefHeight="109.0" prefWidth="700.0" style="-fx-background-color: #0598FF;" BorderPane.alignment="CENTER">
+         <children>
+            <FontAwesomeIconView glyphName="USERS" layoutX="40.0" layoutY="72.0" size="50" />
+            <Text layoutX="168.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADMIN (VIEW USERS)">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="user_id" prefWidth="75.0" text="id" />
+          <TableColumn fx:id="student_name" prefWidth="96.0" text="username" />
+            <TableColumn fx:id="student_id" prefWidth="88.0" text="student_id" />
+            <TableColumn fx:id="student_email" prefWidth="143.0" text="email_address" />
+            <TableColumn fx:id="role_id" prefWidth="75.0" text="role_id" />
+            <TableColumn fx:id="edit_student" prefWidth="99.0" text="Edit Student" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>
