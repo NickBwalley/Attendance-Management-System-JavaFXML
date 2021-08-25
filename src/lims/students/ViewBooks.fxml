@@ -22,7 +22,7 @@
       </AnchorPane>
    </top>
    <center>
-      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <columns>
             <TableColumn fx:id="book_id" prefWidth="122.0" text="book_id" />
             <TableColumn fx:id="book_name" prefWidth="299.0" text="book_name" />
